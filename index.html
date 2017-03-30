@@ -1,57 +1,93 @@
 <!doctype html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>Project 1</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--Jquery need to be loaded first before bootstrap-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  </head>
+</head>
 
-  <body class="container">
+<body class="container">
     <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <!-- change name of website -->
-      <a class="navbar-brand" href="#">CPSC473 Project 1</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+                <!-- change name of website -->
+                <a class="navbar-brand" href="#">CPSC473 Project 1</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <button a href="#" class="btn" role="button" type="button" id="loginBtn" data-toggle="modal" data-target="#loginModal">Login</button>
+                        <!-- COMMENT: The below only work as a button for the icon but not the "Login" text
+                        <a href="#"><span role="button" type="button" class="btn btn-success" id="login-button" data-toggle="modal" data-target="#loginModal">
+                      </span> Login</a>
+                    -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<div class="container-fluid text-center">
-  <div class="row content">
-    <div class="col-sm-2 sidenav">
-      <button class="btn btn-success" type="button">Post a topic!</button>
-      <br><br>
-      <p><a href="#">Course Name</a></p>
-      <p><a href="#">Course Name</a></p>
-      <p><a href="#">Course Name</a></p>
+    <div class="container-fluid text-center">
+        <div class="row content">
+            <div class="col-sm-2 sidenav">
+                <button onclick="location.href='uploadTopic.html'" class="btn btn-success" type="button">Post a topic!</button>
+                <br><br>
+                <p><a href="#">Course Name</a></p>
+                <p><a href="#">Course Name</a></p>
+                <p><a href="#">Course Name</a></p>
+            </div>
+            <div class="col-sm-8 text-left">
+                <center>
+                    <h1>Top Rated Topics</h1>
+                    <li><a href="#">Topic 1</a></li>
+                    <li><a href="#">Topic 2</a></li>
+                    <li><a href="#">Topic 3</a></li>
+                    <li><a href="#">Topic 4</a></li>
+                </center>
+            </div>
+        </div>
     </div>
-    <div class="col-sm-8 text-left">
-      <center>
-      <h1>Top Rated Topics</h1>
-        <li><a href="#">Topic 1</a></li>
-        <li><a href="#">Topic 2</a></li>
-        <li><a href="#">Topic 3</a></li>
-        <li><a href="#">Topic 4</a></li>
-      </center>
-    </div>
-  </div>
-</div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" charset="utf-8"></script>
+    <!--Login Modal BEGIN-->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="loginModalLabel">Login to your account</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="topicField">Username</label>
+                        <input class="form-control" name="Username" id="username" value="" placeholder="Username" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="topicField">Password</label>
+                        <input class="form-control" name="Password" id="password" value="" placeholder="Password" required />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" id="saveAchievement" class="btn btn-primary">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Login Modal END-->
+
     <script src="scripts/remotedb.js" charset="utf-8"></script>
     <script src="scripts/course.js" charset="utf-8"></script>
     <script src="scripts/main.js" charset="utf-8"></script>
-  </body>
+</body>
+
 </html>
