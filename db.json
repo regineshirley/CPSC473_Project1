@@ -1,11 +1,17 @@
 {
-  "course1": [
+  "topics": [
     {
-      "emailAddress": "test@bignerdranch.com",
-      "topic": "tall",
-      "question": "",
-      "likes": "",
-      "dislikes":"",
+      "course":"cpsc_473",
+      "description": "tall",
+      "likes": ["a@b.com", "s@b.com"],
+      "dislikes":["a@b.com", "s@b.com"],
+      "date": "03/30/2017"
+    },
+    {
+      "course":"cpsc_473",
+      "topic2": "tall",
+      "likes": ["a@b.com", "s@b.com"],
+      "dislikes":["a@b.com", "s@b.com"],
       "date": "03/30/2017"
     }
   ]
