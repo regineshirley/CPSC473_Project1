@@ -1,3 +1,7 @@
+.panel-default {
+  word-break:break-all;
+}
+
 .btn.btn-success {
   /*-webkit-border-radius: 0;
   -moz-border-radius: 0;
