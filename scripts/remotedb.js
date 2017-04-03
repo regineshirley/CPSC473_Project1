@@ -1,47 +1,79 @@
-(function (window) {
-  'use strict';
-  var App = window.App || {};
-  var $ = window.jQuery;
-  var likesCount = 0;
-  var dislikesCount = 0;
+(function(window) {
+    'use strict';
+    var App = window.App || {};
 
-  function RemoteDB(url) {
-    if (!url) {
-        throw new Error('no URL was provided');
+    function RemoteDB(url) {
+        if (!url) {
+            throw new Error('No remote URL supplied.');
+        }
+
+        this.serverUrl = url;
+        this.data = {}; //create empty object
     }
-    this.serverUrl = url;
-  }
 
 
-// need to change 'topic' to array type to hold
-//multiple topics for a test for a particular class.
-  RemoteDB.prototype.add = function (key, val) {
-    val['id'] = val['course'].concat(val['topic']);
-    $.post(this.serverUrl, val, function(serverResponse) {
-        console.log(serverResponse);
-    })
-  };
+    RemoteDB.prototype.add = function(topic, course) {
+        return $.post(this.serverUrl, topic, function(serverResponse) {
+            console.log(serverResponse);
+        });
 
-  RemoteDB.prototype.likes = function (topic) {
-    this.data[topic] = likesCount++;
-    return likesCount;
-  };
+        //this.data[topic] = course; //{key = topic & val = course} topic is unique
+    };
 
-  RemoteDB.prototype.dislikes = function (topic) {
-    this.data[topic] = dislikesCount++;
-    return dislikesCount;
-  };
+    RemoteDB.prototype.getAll = function(cb) {
+        return $.get(this.serverUrl, function(serverResponse) {
+          if (cb) {
+            console.log(serverResponse);
+            cb(serverResponse);
+          }
+        });
+        //return this.data;
+    };
 
-  RemoteDB.prototype.get = function (key) {
-    $.get(this.serverUrl + '/' + )
-  };
+    RemoteDB.prototype.get = function(key) {
+        // var obj = {}; //create empty object
+        // for (var key in this.data) { //iterate through each key in obj
+        //     var value = this.data[key]; //value = key of obj
+        //
+        //     if (value === course) { //if value === course
+        //         obj[key] = value; //add values to obj
+        //         //console.log('course: ' + value +' topic: ' + key);
+        //     }
+        // }
+        // //return obj; //return obj object
+        // return $.get(this.serverUrl + '/' + course, function(serverResponse) {
+        //   if (cb) {
+        //     console.log(serverResponse);
+        //     cb(serverResponse);
+        //   }
+        // });
 
-  RemoteDB.prototype.getAll = function () {
-    return this.data;
-  };
+        var obj;
+        $.ajax({
+            url: this.serverUrl,
+            dataType: 'json',
+            type: 'get',
+            cache: false,
+            async: false,
+            success: function(data) {
+                $(data).each(function(index, value) {
+                    if (this.id == key) {
+                        obj = value;
+                    }
+                });
+            }
+        });
 
+        return obj;
+    };
 
+    RemoteDB.prototype.remove = function(key) {
+        return $.ajax(this.serverUrl + '/' + key, {
+            type: 'DELETE',
+            async: false
+        });
+    };
 
-  App.RemoteDB = RemoteDB;
-  window.App = App;
+    App.RemoteDB = RemoteDB;
+    window.App = App;
 })(window);

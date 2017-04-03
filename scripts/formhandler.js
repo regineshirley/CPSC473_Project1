@@ -1,22 +1,36 @@
-// write code for email validation and form handling stuff
-(function (window) {
-  'use strict';
-  var App = window.App;
-  $ = window.jQuery;
-  function VoteHandler(selector) {
+(function(window) {
+    'use strict';
+    var App = window.App || {};
+    var $ = window.jQuery;
+
+    function FormHandler(selector) {
         if (!selector) {
             throw new Error('No selector provided');
         }
         this.$formElement = $(selector);
         if (this.$formElement.length === 0) {
-            throw new Error('Could not find element with the selector: ' + selector);
+            throw new Error('Could not find element with selector: ' + selector);
         }
-    }
-  VoteHandler.prototype.addSubmitHandler = function (fn) {
-    this.$formElement.on('submit', function(event) {
-        event.preventDefault();
 
-    })
-  };
+        FormHandler.prototype.addSubmitHandler = function(fn) {
+            console.log('Setting submit handler for form');
+            this.$formElement.on('submit', function(event) {
+                event.preventDefault();
+
+                var data = {};
+                $(this).serializeArray().forEach(function(item) {
+                    data[item.name] = item.value;
+                    console.log(item.name + ' is ' + item.value);
+                });
+                fn(data).then(function() {
+                    this.reset();
+                    this.elements[0].focus();
+                }.bind(this));
+            });
+        };
+    };
+
+    App.FormHandler = FormHandler;
+    window.App = App;
 
 })(window);
