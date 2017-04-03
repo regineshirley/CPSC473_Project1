@@ -1,0 +1,51 @@
+.likeBtn {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  font-family: Georgia;
+  color: #000000;
+  font-size: 15px;
+  background: green;
+  padding: 0px 0px 0px 0px;
+  text-decoration: none;
+  position: absolute;
+  right: 100px;
+  bottom:5px;
+}
+
+.likeBtn:hover {
+  background: #3cb0fd;
+}
+
+.dislikeBtn {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  font-family: Georgia;
+  color: #000000;
+  font-size: 15px;
+  background: red;
+  padding: 0px 0px 0px 0px;
+  text-decoration: none;
+  position: absolute;
+  right: 25px;
+  bottom:5px;
+}
+
+.dislikeBtn:hover {
+  background: #3cb0fd;
+}
+
+label[for=likeLabel] {
+  position: absolute;
+  right: 80px;
+  bottom:5px;
+  color: green;
+}
+
+label[for=dislikeLabel] {
+  position: absolute;
+  right: 5px;
+  bottom:5px;
+  color: red;
+}
