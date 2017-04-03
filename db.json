@@ -1,18 +1,38 @@
 {
   "topics": [
     {
-      "course":"cpsc_473",
+      "course": "cpsc_473",
       "description": "tall",
-      "likes": ["a@b.com", "s@b.com"],
-      "dislikes":["a@b.com", "s@b.com"],
+      "likes": 4,
+      "dislikes":6,
       "date": "03/30/2017"
     },
     {
-      "course":"cpsc_473",
-      "topic2": "tall",
-      "likes": ["a@b.com", "s@b.com"],
-      "dislikes":["a@b.com", "s@b.com"],
+      "id": "cpsc_120",
+      "topics": [],
+      "likes": [
+        "a@b.com",
+        "s@b.com"
+      ],
+      "dislikes": [
+        "a@b.com",
+        "s@b.com"
+      ],
       "date": "03/30/2017"
+    },
+    {
+      "course": "cpsc_123",
+      "description": "tall",
+      "likes[]": [
+        "a@b.com",
+        "s@b.com"
+      ],
+      "dislikes[]": [
+        "a@b.com",
+        "s@b.com"
+      ],
+      "date": "03/30/2017",
+      "id": "B1sVJ1Ane"
     }
   ]
 }

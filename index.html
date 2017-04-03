@@ -30,6 +30,7 @@
                         <!-- COMMENT: The below only work as a button for the icon but not the "Login" text.
                         <a href="#"><span role="button" type="button" class="btn btn-success" id="login-button" data-toggle="modal" data-target="#loginModal">
                       </span> Login</a>
+
                     -->
                     </li>
                 </ul>
@@ -40,16 +41,22 @@
     <div class="container-fluid text-center">
         <div class="row content">
             <div class="col-sm-2 sidenav">
-                <button onclick="location.href='uploadTopic.html'" class="btn btn-success" type="button">Post a topic!</button>
+                <!--<button onclick="location.href='uploadTopic.html'" class="btn btn-success" type="button">Post a topic!</button> -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Post a Topic</button>
                 <br><br>
-                <p><a href="#">Course Name</a></p>
-                <p><a href="#">Course Name</a></p>
-                <p><a href="#">Course Name</a></p>
+                
+                <select id="courseName" class="form-control" name="course">
+                    <option value="cpsc473">CPSC 473</option>
+                    <option value="cpsc120">CPSC 120</option>
+                    <option value="cpsc121">CPSC 121</option>
+                    <option value="cpsc131">CPSC 131</option>
+                </select>
             </div>
             <div class="col-sm-8 text-left">
                 <center>
                     <h1>Top Rated Topics</h1>
-                    <li><a href="#">Topic 1</a></li>
+                    <li><a href="#">Topic 1</a> <button a href="#" class="btn" role="button" type="button" id="loginBt">Like</button>
+                        <p> </p> <button a href="#" class="btn" role="button" type="button" id="dislike">Dislike</button> </li>
                     <li><a href="#">Topic 2</a></li>
                     <li><a href="#">Topic 3</a></li>
                     <li><a href="#">Topic 4</a></li>
@@ -84,6 +91,46 @@
         </div>
     </div>
     <!--Login Modal END-->
+
+    <!--Post a topic modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel">New message</h4>
+                </div>
+                <div class="modal-body">
+                    <form post-a-topic="form">
+                        <div class="form-group">
+                            <label for="courseName">Class</label>
+                            <select id="courseName" class="form-control" name="course">
+                                <option value="cpsc473">CPSC 473</option>
+                                <option value="cpsc120">CPSC 120</option>
+                                <option value="cpsc121">CPSC 121</option>
+                                <option value="cpsc131">CPSC 131</option>
+                        </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="topicField">Topic</label>
+                            <input class="form-control" name="topic" id="topicField" value="" placeholder="Enter topic here" required />
+                        </div>
+
+
+                        <button type="submit" class="btn btn-default"> Submit</button>
+                        <button type="reset" id="resetBtn" class="btn btn-default"> Reset</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- post a topic end of modal-->
 
     <script src="scripts/remotedb.js" charset="utf-8"></script>
     <script src="scripts/course.js" charset="utf-8"></script>
