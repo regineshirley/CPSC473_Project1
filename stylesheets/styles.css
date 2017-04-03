@@ -1,0 +1,53 @@
+.btn.btn-success {
+  /*-webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  font-family: Georgia;
+  color: #000000;
+  font-size: 15px;
+  background: green;
+  padding: 0px 0px 0px 0px;
+  text-decoration: none;*/
+  padding: 3px 3px 3px 3px;
+  position: absolute;
+  right: 100px;
+  bottom:5px;
+}
+
+.btn.btn-success:hover {
+  background: #3cb0fd;
+}
+
+.btn.btn-danger {
+  /*-webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  font-family: Georgia;
+  color: #000000;
+  font-size: 15px;
+  background: red;
+  padding: 0px 0px 0px 0px;
+  text-decoration: none;*/
+  padding: 3px 3px 3px 3px;
+  position: absolute;
+  right: 22px;
+  bottom:5px;
+}
+
+.btn.btn-danger:hover {
+  background: #3cb0fd;
+}
+
+label[for=likeLabel] {
+  position: absolute;
+  right: 80px;
+  bottom:5px;
+  color: green;
+}
+
+label[for=dislikeLabel] {
+  position: absolute;
+  right: 2px;
+  bottom:5px;
+  color: red;
+}
