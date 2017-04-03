@@ -1,38 +1,46 @@
 {
-  "topics": [
+  "TopicSubmissions": [
     {
-      "course": "cpsc_473",
-      "description": "tall",
-      "likes": 4,
-      "dislikes":6,
-      "date": "03/30/2017"
+      "course": "cpsc473",
+      "topic": "dsfsdf",
+      "id": "dsfsdf",
+      "likes": "21",
+      "dislikes": "12"
     },
     {
-      "id": "cpsc_120",
-      "topics": [],
-      "likes": [
-        "a@b.com",
-        "s@b.com"
-      ],
-      "dislikes": [
-        "a@b.com",
-        "s@b.com"
-      ],
-      "date": "03/30/2017"
+      "course": "cpsc121",
+      "topic": "json",
+      "id": "json",
+      "likes": "17",
+      "dislikes": "6"
     },
     {
-      "course": "cpsc_123",
-      "description": "tall",
-      "likes[]": [
-        "a@b.com",
-        "s@b.com"
-      ],
-      "dislikes[]": [
-        "a@b.com",
-        "s@b.com"
-      ],
-      "date": "03/30/2017",
-      "id": "B1sVJ1Ane"
+      "course": "cpsc473",
+      "topic": "ajax",
+      "id": "ajax",
+      "likes": "32",
+      "dislikes": "9"
+    },
+    {
+      "course": "cpsc473",
+      "topic": "jsdjfbsd",
+      "id": "jsdjfbsd",
+      "likes": "23",
+      "dislikes": "21"
+    },
+    {
+      "course": "cpsc121",
+      "topic": "sdfsdfsdf",
+      "id": "sdfsdfsdf",
+      "likes": "3",
+      "dislikes": "5"
+    },
+    {
+      "course": "cpsc473",
+      "topic": "123",
+      "id": "123",
+      "likes": "0",
+      "dislikes": "0"
     }
   ]
 }
