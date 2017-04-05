@@ -1,13 +1,6 @@
 {
   "TopicSubmissions": [
     {
-      "course": "cpsc473",
-      "topic": "dsfsdf",
-      "id": "dsfsdf",
-      "likes": "21",
-      "dislikes": "12"
-    },
-    {
       "course": "cpsc121",
       "topic": "json",
       "id": "json",
@@ -34,6 +27,34 @@
       "id": "sdfsdfsdf",
       "likes": "3",
       "dislikes": "5"
+    },
+    {
+      "course": "cpsc473",
+      "topic": "jquery and dom manipulation",
+      "id": "jquery and dom manipulation",
+      "likes": "4",
+      "dislikes": "1"
+    },
+    {
+      "course": "cpsc473",
+      "topic": "dsfsdf",
+      "id": "dsfsdf",
+      "likes": "22",
+      "dislikes": "12"
+    },
+    {
+      "course": "cpsc473",
+      "topic": "ajax and json",
+      "id": "ajax and json",
+      "likes": "0",
+      "dislikes": "0"
+    },
+    {
+      "course": "cpsc473",
+      "topic": "new topic",
+      "id": "new topic",
+      "likes": "2",
+      "dislikes": "0"
     }
   ]
 }

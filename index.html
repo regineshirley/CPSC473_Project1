@@ -47,7 +47,7 @@
                     <h4 class="modal-title" id="postTopicModalLabel">Post a topic</h4>
                 </div>
                 <div class="modal-body"> -->
-                    <!-- <form post-a-topic="form">
+    <!-- <form post-a-topic="form">
                         <div class="form-group">
                             <label for="course">Course</label>
                             <select id="course" class="form-control" name="course">
@@ -66,34 +66,18 @@
                         <button type="submit" id="submitBtn" class="btn btn-default"> Submit</button>
                         <button type="reset" id="resetBtn" class="btn btn-default"> Reset</button>
                     </form> -->
-                <!-- </div>
+    <!-- </div>
 
             </div>
         </div>
     </div> -->
     <!--Post Topic Modal END-->
 
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar">
         <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
                 <!-- change name of website -->
-                <a class="navbar-brand" href="#">CSUF Study Buddy</a>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <!-- <a href="#" class="btn" role="button" type="button" id="loginBtn" data-toggle="modal" data-target="#loginModal">Login</a> -->
-                        <!-- COMMENT: The below only work as a button for the icon but not the "Login" text.
-                        <a href="#"><span role="button" type="button" class="btn btn-success" id="login-button" data-toggle="modal" data-target="#loginModal">
-                      </span> Login</a>
-                    -->
-                    </li>
-                </ul>
+                <a class="navbar-brand" href="#">Titan Study Buddy</a>
             </div>
         </div>
     </nav>
@@ -113,9 +97,10 @@
             </div>
             <div class="col-sm-8 text-left">
                 <center>
+                    <br>
                     <form post-a-topic="form">
                         <div class="form-group">
-                            <label for="course">Course</label>
+                            <label class="formLabel" for="course">Course</label>
                             <select id="course" class="form-control" name="course">
                       <option value="cpsc473">CPSC 473</option>
                       <option value="cpsc120">CPSC 120</option>
@@ -129,12 +114,12 @@
                         </div> -->
 
                         <div class="form-group">
-                            <label for="topicField">Topic</label>
+                            <label class="formLabel" for="topicField">Topic</label>
                             <input class="form-control" name="topic" id="topicField" placeholder="Enter topic here" required autofocus/>
                         </div>
 
-                        <button type="submit" id="submitBtn" class="btn btn-default"> Submit</button>
                         <button type="reset" id="resetBtn" class="btn btn-default"> Reset</button>
+                        <button type="submit" id="submitBtn" class="btn btn-default"> Submit</button>
                     </form>
                     <br>
                     <!-- <button class="btn btn-success" type="button" role="button" id="postTopicBtn" data-toggle="modal" data-target="#postTopicModal">Post a topic!</button> -->
