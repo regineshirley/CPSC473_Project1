@@ -52,6 +52,7 @@
         });
 
         //Create labels
+        //var $descriptionLi = $('<li></li>');
         var $descriptionLabel = $('<label></label>');
         var $likeLabel = $('<label for="likeLabel"></label>');
         var $dislikeLabel = $('<label for="dislikeLabel"></label>');
@@ -126,6 +127,7 @@
         $descriptionLabel.append(description);
 
         $div.append($descriptionLabel);
+        //$div.append($descriptionLi);
 
         $div.append($likeBtn);
         $div.append($likeLabel);

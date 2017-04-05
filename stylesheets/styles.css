@@ -14,6 +14,7 @@ body {
 .navbar-brand {
     color: #db6d01;
     font-size: 30px;
+    font-family: Proxima nova;
 }
 
 .col-sm-8 {
@@ -23,6 +24,10 @@ body {
 
 .formLabel {
     color: white;
+}
+
+.list-group-item:nth-child(even) {
+    background: rgba(168, 186, 218, 0.22);
 }
 
 
