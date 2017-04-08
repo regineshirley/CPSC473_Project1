@@ -1,60 +1,60 @@
 {
   "TopicSubmissions": [
     {
-      "course": "cpsc121",
-      "topic": "json",
-      "id": "json",
-      "likes": "17",
-      "dislikes": "6"
+      "course": "cpsc473",
+      "topic": "jquery and dom manipulation",
+      "id": "jquery and dom manipulation",
+      "likes": "27",
+      "dislikes": "29"
     },
     {
       "course": "cpsc473",
       "topic": "ajax",
       "id": "ajax",
-      "likes": "32",
-      "dislikes": "9"
+      "likes": "14",
+      "dislikes": "16"
     },
     {
-      "course": "cpsc473",
-      "topic": "jsdjfbsd",
-      "id": "jsdjfbsd",
-      "likes": "23",
-      "dislikes": "21"
+      "course": "cpsc121",
+      "topic": "json",
+      "id": "json",
+      "likes": "26",
+      "dislikes": "13"
     },
     {
       "course": "cpsc121",
       "topic": "sdfsdfsdf",
       "id": "sdfsdfsdf",
-      "likes": "3",
-      "dislikes": "5"
-    },
-    {
-      "course": "cpsc473",
-      "topic": "jquery and dom manipulation",
-      "id": "jquery and dom manipulation",
-      "likes": "4",
-      "dislikes": "1"
+      "likes": "9",
+      "dislikes": "14"
     },
     {
       "course": "cpsc473",
       "topic": "dsfsdf",
       "id": "dsfsdf",
-      "likes": "22",
-      "dislikes": "12"
+      "likes": "23",
+      "dislikes": "15"
     },
     {
       "course": "cpsc473",
-      "topic": "ajax and json",
-      "id": "ajax and json",
-      "likes": "0",
-      "dislikes": "0"
+      "topic": "jsdjfbsd",
+      "id": "jsdjfbsd",
+      "likes": "24",
+      "dislikes": "24"
     },
     {
       "course": "cpsc473",
       "topic": "new topic",
       "id": "new topic",
+      "likes": "3",
+      "dislikes": "5"
+    },
+    {
+      "course": "cpsc473",
+      "topic": "ajax and json",
+      "id": "ajax and json",
       "likes": "2",
-      "dislikes": "0"
+      "dislikes": "3"
     }
   ]
 }

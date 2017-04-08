@@ -1,8 +1,8 @@
 (function(window) {
     'use strict';
-    var FORM_SELECTOR = '[post-a-topic="form"]'
-    var TOPICSLIST_SELECTOR = '[post-topic="topiclist"]'
-    var SERVER_URL = "http://localhost:3002/TopicSubmissions";
+    var FORM_SELECTOR = '[post-a-topic="form"]';
+    var TOPICSLIST_SELECTOR = '[post-topic="topiclist"]';
+    var SERVER_URL = 'http://localhost:3002/TopicSubmissions';
     var App = window.App;
     //var CS = App.CS;
     var RemoteDB = App.RemoteDB;
@@ -16,15 +16,14 @@
 
     //Project 1 -LOAD UP THE PAGE WITH TOPICS
     var $ = window.jQuery;
-    $.getJSON(SERVER_URL, function(data) {
+    $.get(SERVER_URL, function(data) {
         $(data).each(function(key, value) {
             topicsList.addRow(value);
         });
     });
 
+    //On topic submit button
     formHandler.addSubmitHandler(function(data) {
-        // remoteDB.postTopic.call(csCourses, data);
-        // topicsList.addRow.call(topicsList, data
         data.id = data.topic;
         data.likes = 0;
         data.dislikes = 0;
