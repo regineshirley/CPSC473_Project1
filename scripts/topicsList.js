@@ -30,24 +30,8 @@
     };
 
     function Row(TopicSubmission, db) {
-        // var $div = $('<div></div>', {
-        //     'course-topic-list': 'topicsList',
-        //     'class': 'topicList'
-        // });
-        // var $label = $('<label></label>');
-        //
-        // var $topic = $('<input></input>', {
-        //     value: TopicSubmission.topic
-        // });
-        //
-        //
-        //
-        // $label.append($topic);
-        // $div.append($label);
-        //
-        // this.$element = $div;
         var $div = $('<div></div>', {
-            'post-topic':'topiclist',
+            'post-topic': 'topiclist',
             'class': 'list-group-item'
         });
 
@@ -71,7 +55,7 @@
 
         var $space = $('<span> &emsp;&emsp;&emsp;</span>');
 
-        var $dislikeBtn =$('<button type="button" class="btn btn-danger">Dislike</button>');
+        var $dislikeBtn = $('<button type="button" class="btn btn-danger">Dislike</button>');
 
         //Create new id for the like/dislike buttons
         var newLikeButtonID = TopicSubmission.topic.replace(/[^a-z0-9\s]/gi, '');
@@ -79,7 +63,7 @@
         var newDislikeButtonID = TopicSubmission.topic.replace(/[^a-z0-9\s]/gi, '');
         newDislikeButtonID = newDislikeButtonID.replace(/\s/g, '') + '_dislike';
 
-        console.log('like id: ' + newLikeButtonID);
+        //console.log('like id: ' + newLikeButtonID);
 
         //Give the new id for the like/dislike buttons
         $($likeBtn).attr('id', newLikeButtonID);
@@ -87,41 +71,16 @@
 
         //When a like button is clicked
         $(document).on('click', '#' + $($likeBtn).attr('id'), function() {
-            var obj;
-            obj = db.get(TopicSubmission.topic);
-
-            db.remove(TopicSubmission.topic);
-
-            obj.likes = parseInt(obj.likes) + 1;
-
-            $likeLabel.text(obj.likes);
-
-            db.add(obj);
-
-            /* Experimental
-                        $.ajax({
-                            url: SERVER_URL,
-                            type: 'PUT',
-                            dataType: 'json',
-                            success: function(data) {
-                                console.log('Load was performed.');
-                            }
-                        });
-            */
+            TopicSubmission.likes = (parseInt(TopicSubmission.likes) + 1).toString();
+            db.update(TopicSubmission);
+            $likeLabel.text(TopicSubmission.likes);
         });
 
         //When a dislike button is clicked
         $(document).on('click', '#' + $($dislikeBtn).attr('id'), function() {
-            var obj;
-            obj = db.get(TopicSubmission.topic);
-
-            db.remove(TopicSubmission.topic);
-
-            obj.dislikes = parseInt(obj.dislikes) + 1;
-
-            $dislikeLabel.text(obj.dislikes);
-
-            db.add(obj);
+            TopicSubmission.dislikes = (parseInt(TopicSubmission.dislikes) + 1).toString();
+            db.update(TopicSubmission);
+            $dislikeLabel.text(TopicSubmission.dislikes);
         });
 
         $descriptionLabel.append(description);

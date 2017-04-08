@@ -1,6 +1,7 @@
 (function(window) {
     'use strict';
     var App = window.App || {};
+    var $ = window.jQuery;
 
     function RemoteDB(url) {
         if (!url) {
@@ -11,6 +12,18 @@
         this.data = {}; //create empty object
     }
 
+    RemoteDB.prototype.update = function(topic) {
+        $.ajax({
+            url: this.serverUrl + '/' + topic.id,
+            type: 'PUT',
+            data: JSON.stringify(topic),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function(data) {
+                console.log('Updated server');
+            }
+        });
+    };
 
     RemoteDB.prototype.add = function(topic, course) {
         return $.post(this.serverUrl, topic, function(serverResponse) {
@@ -22,39 +35,21 @@
 
     RemoteDB.prototype.getAll = function(cb) {
         return $.get(this.serverUrl, function(serverResponse) {
-          if (cb) {
-            console.log(serverResponse);
-            cb(serverResponse);
-          }
+            if (cb) {
+                console.log(serverResponse);
+                cb(serverResponse);
+            }
         });
         //return this.data;
     };
 
     RemoteDB.prototype.get = function(key) {
-        // var obj = {}; //create empty object
-        // for (var key in this.data) { //iterate through each key in obj
-        //     var value = this.data[key]; //value = key of obj
-        //
-        //     if (value === course) { //if value === course
-        //         obj[key] = value; //add values to obj
-        //         //console.log('course: ' + value +' topic: ' + key);
-        //     }
-        // }
-        // //return obj; //return obj object
-        // return $.get(this.serverUrl + '/' + course, function(serverResponse) {
-        //   if (cb) {
-        //     console.log(serverResponse);
-        //     cb(serverResponse);
-        //   }
-        // });
-
         var obj;
         $.ajax({
             url: this.serverUrl,
             dataType: 'json',
             type: 'get',
             cache: false,
-            async: false,
             success: function(data) {
                 $(data).each(function(index, value) {
                     if (this.id == key) {
@@ -67,10 +62,10 @@
         return obj;
     };
 
+    //Don't need ATM
     RemoteDB.prototype.remove = function(key) {
         return $.ajax(this.serverUrl + '/' + key, {
-            type: 'DELETE',
-            async: false
+            type: 'DELETE'
         });
     };
 
