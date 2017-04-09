@@ -16,25 +16,27 @@
         }
 
         FormHandler.prototype.addSubmitHandler = function(fn) {
-            console.log('Setting submit handler for form');
             this.$formElement.on('submit', function(event) {
                 event.preventDefault();
 
-                var data = {};
-                $(this).serializeArray().forEach(function(item) {
-                    data[item.name] = item.value;
-                    console.log(item.name + ' is ' + item.value);
-                });
-                fn(data).then(function() {
-                    this.reset();
-                    this.elements[0].focus();
-                }.bind(this));
+                if (window.isLoggedIn) {  //Submit button only works if user is logged in
+                    var data = {};
+                    $(this).serializeArray().forEach(function(item) {
+                        data[item.name] = item.value;
+                        console.log(item.name + ' is ' + item.value);
+                    });
+                    fn(data).then(function() {
+                        this.reset();
+                        this.elements[0].focus();
+                    }.bind(this));
+                } else {
+                    console.log('You have to log in to post');
+                }
             });
         };
 
 
-        FormHandler.prototype.addRegisterModalSubmitHandler = function(fn) {
-            console.log('Setting Register modal submit handler');
+        FormHandler.prototype.addRegisterModalSubmitHandler = function() {
             $(document).on('click', '#registerModalBtnId', function() {
                 var username = document.getElementById('usernameRegister').value;
                 var password = document.getElementById('passwordRegister').value;
@@ -49,8 +51,7 @@
         };
 
 
-        FormHandler.prototype.addLoginModalSubmitHandler = function(fn) {
-            console.log('Setting login modal submit handler');
+        FormHandler.prototype.addLoginModalSubmitHandler = function() {
             $(document).on('click', '#loginModalBtnId', function() {
                 var username = document.getElementById('usernameLogin').value;
                 var password = document.getElementById('passwordLogin').value;
@@ -59,19 +60,19 @@
 
                 var loggedIn = false;
                 $(accountList).each(function(index, value) {
-                    if(username == value.username && password == value.password) {
+                    if (username == value.username && password == value.password) {
                         window.username = username;
                         loggedIn = true;
                     }
                 });
 
-                if(loggedIn) {
+                if (loggedIn) {
                     console.log('Logged in');
+                    window.isLoggedIn = true;
                     $('#loginBtnId').remove();
                     $('#registerBtnId').remove();
                     $('[for=loggedInDisplay]').html('Logged in as ' + username + '<br /> Refresh to log out');
-                }
-                else {
+                } else {
                     console.log('Login failed');
                 }
 
