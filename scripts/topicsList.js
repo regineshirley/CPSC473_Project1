@@ -77,60 +77,66 @@
             var likeIndex = likesList.indexOf(window.username);
             var dislikeIndex = dislikesList.indexOf(window.username);
 
-            //If user has not liked or disliked this, and they tried to click like
-            if (likeIndex == -1 && dislikeIndex == -1) {
-                //Append to likesEmail list.
-                if (TopicSubmission.likesEmail == '') {
-                    TopicSubmission.likesEmail = window.username;
+            if (window.isLoggedIn) {
+
+                //If user has not liked or disliked this, and they tried to click like
+                if (likeIndex == -1 && dislikeIndex == -1) {
+                    //Append to likesEmail list.
+                    if (TopicSubmission.likesEmail == '') {
+                        TopicSubmission.likesEmail = window.username;
+                    } else {
+                        TopicSubmission.likesEmail = TopicSubmission.likesEmail + ' ' + window.username;
+                    }
+
+                    //Update like counts
+                    TopicSubmission.likes = (parseInt(TopicSubmission.likes) + 1).toString();
+
+                    //Update object in server
+                    db.update(TopicSubmission);
+
+                    //Display new likes count
+                    $likeLabel.text(TopicSubmission.likes);
+
+                    console.log('not liked or disliked yet');
+                } else if (likeIndex != -1) //They already liked it, but tried clicking like again.
+                {
+                    //Display an alert, or validation message, instead of console.log
+
+                    console.log('You have already liked this');
+                } else if (dislikeIndex != -1) //They already disliked it, but tried clicking like as to change their mind.
+                {
+                    //Append to likesEmail list.
+                    if (TopicSubmission.likesEmail == '') {
+                        TopicSubmission.likesEmail = window.username;
+                    } else {
+                        TopicSubmission.likesEmail = TopicSubmission.likesEmail + ' ' + window.username;
+                    }
+
+                    //remove them from dislikesEmail in database
+                    TopicSubmission.dislikesEmail = TopicSubmission.dislikesEmail.replace(window.username, '');
+
+                    //Update like counts
+                    TopicSubmission.likes = (parseInt(TopicSubmission.likes) + 1).toString();
+
+                    //Update dislike counts
+                    TopicSubmission.dislikes = (parseInt(TopicSubmission.dislikes) - 1).toString();
+
+                    //Update object in server
+                    db.update(TopicSubmission);
+
+                    //Display new likes count
+                    $likeLabel.text(TopicSubmission.likes);
+
+                    //Display new dislikes count
+                    $dislikeLabel.text(TopicSubmission.dislikes);
+
+                    console.log('disliked but changed to like');
                 } else {
-                    TopicSubmission.likesEmail = TopicSubmission.likesEmail + ' ' + window.username;
+                    console.log('nothing happened');
                 }
-
-                //Update like counts
-                TopicSubmission.likes = (parseInt(TopicSubmission.likes) + 1).toString();
-
-                //Update object in server
-                db.update(TopicSubmission);
-
-                //Display new likes count
-                $likeLabel.text(TopicSubmission.likes);
-
-                console.log('not liked or disliked yet');
-            } else if (likeIndex != -1) //They already liked it, but tried clicking like again.
-            {
-                //Display an alert, or validation message, instead of console.log
-
-                console.log('You have already liked this');
-            } else if (dislikeIndex != -1) //They already disliked it, but tried clicking like as to change their mind.
-            {
-                //Append to likesEmail list.
-                if (TopicSubmission.likesEmail == '') {
-                    TopicSubmission.likesEmail = window.username;
-                } else {
-                    TopicSubmission.likesEmail = TopicSubmission.likesEmail + ' ' + window.username;
-                }
-
-                //remove them from dislikesEmail in database
-                TopicSubmission.dislikesEmail = TopicSubmission.dislikesEmail.replace(window.username, '');
-
-                //Update like counts
-                TopicSubmission.likes = (parseInt(TopicSubmission.likes) + 1).toString();
-
-                //Update dislike counts
-                TopicSubmission.dislikes = (parseInt(TopicSubmission.dislikes) - 1).toString();
-
-                //Update object in server
-                db.update(TopicSubmission);
-
-                //Display new likes count
-                $likeLabel.text(TopicSubmission.likes);
-
-                //Display new dislikes count
-                $dislikeLabel.text(TopicSubmission.dislikes);
-
-                console.log('disliked but changed to like');
             } else {
-                console.log('nothing happened');
+                //change to alert or validation message.
+                console.log('You are not logged in');
             }
         });
 
@@ -142,59 +148,65 @@
             var likeIndex = likesList.indexOf(window.username);
             var dislikeIndex = dislikesList.indexOf(window.username);
 
-            //If user has not liked or disliked this, and they tried to click dislike
-            if (likeIndex == -1 && dislikeIndex == -1) {
-                //Append to dislikesEmail list.
-                if (TopicSubmission.dislikesEmail == '') {
-                    TopicSubmission.dislikesEmail = window.username;
+
+            if (window.isLoggedIn) {
+                //If user has not liked or disliked this, and they tried to click dislike
+                if (likeIndex == -1 && dislikeIndex == -1) {
+                    //Append to dislikesEmail list.
+                    if (TopicSubmission.dislikesEmail == '') {
+                        TopicSubmission.dislikesEmail = window.username;
+                    } else {
+                        TopicSubmission.dislikesEmail = TopicSubmission.dislikesEmail + ' ' + window.username;
+                    }
+
+                    //Update dislike counts
+                    TopicSubmission.dislikes = (parseInt(TopicSubmission.dislikes) + 1).toString();
+
+                    //Update object in server
+                    db.update(TopicSubmission);
+
+                    //Display new dislikes count
+                    $dislikeLabel.text(TopicSubmission.dislikes);
+
+                    console.log('not liked or disliked yet');
+                } else if (dislikeIndex != -1) //They already disliked it, but tried clicking dislike again.
+                {
+                    //Display an alert, or validation message, instead of console.log
+                    console.log('You have already disliked this');
+                } else if (likeIndex != -1) //They already liked it, but tried clicking dislike as to change their mind.
+                {
+                    //Append to dislikesEmail list.
+                    if (TopicSubmission.dislikesEmail == '') {
+                        TopicSubmission.dislikesEmail = window.username;
+                    } else {
+                        TopicSubmission.dislikesEmail = TopicSubmission.dislikesEmail + ' ' + window.username;
+                    }
+
+                    //remove them from likesEmail in database
+                    TopicSubmission.likesEmail = TopicSubmission.likesEmail.replace(window.username, '');
+
+                    //Update like counts
+                    TopicSubmission.likes = (parseInt(TopicSubmission.likes) - 1).toString();
+
+                    //Update dislike counts
+                    TopicSubmission.dislikes = (parseInt(TopicSubmission.dislikes) + 1).toString();
+
+                    //Update object in server
+                    db.update(TopicSubmission);
+
+                    //Display new likes count
+                    $likeLabel.text(TopicSubmission.likes);
+
+                    //Display new dislikes count
+                    $dislikeLabel.text(TopicSubmission.dislikes);
+
+                    console.log('liked but changed to dislike');
                 } else {
-                    TopicSubmission.dislikesEmail = TopicSubmission.dislikesEmail + ' ' + window.username;
+                    console.log('nothing happened');
                 }
-
-                //Update dislike counts
-                TopicSubmission.dislikes = (parseInt(TopicSubmission.dislikes) + 1).toString();
-
-                //Update object in server
-                db.update(TopicSubmission);
-
-                //Display new dislikes count
-                $dislikeLabel.text(TopicSubmission.dislikes);
-
-                console.log('not liked or disliked yet');
-            } else if (dislikeIndex != -1) //They already disliked it, but tried clicking dislike again.
-            {
-                //Display an alert, or validation message, instead of console.log
-                console.log('You have already disliked this');
-            } else if (likeIndex != -1) //They already liked it, but tried clicking dislike as to change their mind.
-            {
-                //Append to dislikesEmail list.
-                if (TopicSubmission.dislikesEmail == '') {
-                    TopicSubmission.dislikesEmail = window.username;
-                } else {
-                    TopicSubmission.dislikesEmail = TopicSubmission.dislikesEmail + ' ' + window.username;
-                }
-
-                //remove them from likesEmail in database
-                TopicSubmission.likesEmail = TopicSubmission.likesEmail.replace(window.username, '');
-
-                //Update like counts
-                TopicSubmission.likes = (parseInt(TopicSubmission.likes) - 1).toString();
-
-                //Update dislike counts
-                TopicSubmission.dislikes = (parseInt(TopicSubmission.dislikes) + 1).toString();
-
-                //Update object in server
-                db.update(TopicSubmission);
-
-                //Display new likes count
-                $likeLabel.text(TopicSubmission.likes);
-
-                //Display new dislikes count
-                $dislikeLabel.text(TopicSubmission.dislikes);
-
-                console.log('liked but changed to dislike');
             } else {
-                console.log('nothing happened');
+                //change to alert or validation message.
+                console.log('You are not logged in');
             }
         });
 
