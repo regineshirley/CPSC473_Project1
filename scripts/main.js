@@ -29,6 +29,7 @@
         data.dislikes = 0;
         data.likesEmail = '';
         data.dislikesEmail = '';
+
         return remoteDB.add.call(remoteDB, data)
             .then(function() {
                 topicsList.addRow.call(topicsList, data);
