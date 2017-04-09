@@ -30,6 +30,23 @@ body {
     background: rgba(168, 186, 218, 0.22);
 }
 
+/*Login button*/
+#loginBtnId {
+  padding: 3px 3px 3px 3px;
+  position: absolute;
+  right: 80px;
+  bottom: 5px;
+}
+
+/*Register button*/
+#registerBtnId {
+  padding: 3px 3px 3px 3px;
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+}
+
+
 
 /*Like Button*/
 
@@ -74,6 +91,13 @@ body {
 
 .btn.btn-danger:hover {
     background: #3cb0fd;
+}
+
+label[for=loggedInDisplay] {
+  position: absolute;
+  right: 50px;
+  bottom: 5px;
+  color: white;
 }
 
 label[for=likeLabel] {
