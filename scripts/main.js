@@ -3,16 +3,16 @@
     var FORM_SELECTOR = '[post-a-topic="form"]';
     var TOPICSLIST_SELECTOR = '[post-topic="topiclist"]';
     var SERVER_URL = 'http://localhost:3002/TopicSubmissions';
+    var LOGIN_SERVER_URL = 'http://localhost:3002/LoginAccounts';
     var App = window.App;
-    //var CS = App.CS;
     var RemoteDB = App.RemoteDB;
+    var LoginDB = App.LoginDB;
     var FormHandler = App.FormHandler;
     var TopicsList = App.TopicsList;
     var remoteDB = new RemoteDB(SERVER_URL);
-    //var csCourses = new CS(remoteDB);
-    //window.csCourses = csCourses;
+    var loginDB = new LoginDB(LOGIN_SERVER_URL);
     var topicsList = new TopicsList(TOPICSLIST_SELECTOR, remoteDB);
-    var formHandler = new FormHandler(FORM_SELECTOR);
+    var formHandler = new FormHandler(FORM_SELECTOR, loginDB);
 
     //Project 1 -LOAD UP THE PAGE WITH TOPICS
     var $ = window.jQuery;
@@ -27,9 +27,17 @@
         data.id = data.topic;
         data.likes = 0;
         data.dislikes = 0;
+        data.likesEmail = '';
+        data.dislikesEmail = '';
         return remoteDB.add.call(remoteDB, data)
             .then(function() {
                 topicsList.addRow.call(topicsList, data);
             });
     });
+
+    //Login modal submit
+    formHandler.addLoginModalSubmitHandler();
+
+    //Register modal submit
+    formHandler.addRegisterModalSubmitHandler();
 })(window);
