@@ -5,31 +5,25 @@
       "topic": "test",
       "id": "test",
       "likes": "0",
-      "dislikes": "2",
+      "dislikes": "1",
       "likesEmail": "",
-      "dislikesEmail": "luankhong   luankhonghero"
+      "dislikesEmail": "hello"
+    },
+    {
+      "course": "cpsc473",
+      "topic": "again",
+      "id": "again",
+      "likes": "0",
+      "dislikes": "0",
+      "likesEmail": "",
+      "dislikesEmail": ""
     }
   ],
   "LoginAccounts": [
     {
-      "username": "luankhong",
-      "password": "supbro",
-      "id": "luankhong"
-    },
-    {
-      "username": "luankhonghero",
-      "password": "nohero",
-      "id": "luankhonghero"
-    },
-    {
-      "username": "registerme",
-      "password": "nowaybro",
-      "id": "registerme"
-    },
-    {
-      "username": "",
-      "password": "",
-      "id": "rJX6Czv6g"
+      "username": "hello",
+      "password": "world",
+      "id": "hello"
     }
   ]
 }
