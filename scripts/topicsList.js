@@ -26,7 +26,7 @@
     };
 
     TopicsList.prototype.removeRow = function(email) {
-        this.$element.find('[value="' + email + '"]').closest('[data-coffee-order="checkbox"]').remove();
+        this.$element.find('[value="' + email + '"]').closest('[post-topic="topiclist"]').remove();
     };
 
     function Row(TopicSubmission, db) {
@@ -49,8 +49,6 @@
 
         //Create like/dislike buttons
 
-        //<button type='button' class='btn btn-primary btn-xs'>Button1</button>
-        //$('<input type="button" class="likeBtn" value="Like" name="likeBtn" id="defaultLikeBtnID"/>');
         var $likeBtn = $('<button type="button" class="btn btn-success">Like</button>');
 
         var $space = $('<span> &emsp;&emsp;&emsp;</span>');
@@ -62,8 +60,6 @@
         newLikeButtonID = newLikeButtonID.replace(/\s/g, '') + '_like';
         var newDislikeButtonID = TopicSubmission.topic.replace(/[^a-z0-9\s]/gi, '');
         newDislikeButtonID = newDislikeButtonID.replace(/\s/g, '') + '_dislike';
-
-        //console.log('like id: ' + newLikeButtonID);
 
         //Give the new id for the like/dislike buttons
         $($likeBtn).attr('id', newLikeButtonID);

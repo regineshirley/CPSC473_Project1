@@ -19,7 +19,7 @@
             this.$formElement.on('submit', function(event) {
                 event.preventDefault();
 
-                if (window.isLoggedIn) {  //Submit button only works if user is logged in
+                if (window.isLoggedIn) { //Submit button only works if user is logged in
                     var data = {};
                     $(this).serializeArray().forEach(function(item) {
                         data[item.name] = item.value;
@@ -35,18 +35,20 @@
             });
         };
 
-
         FormHandler.prototype.addRegisterModalSubmitHandler = function() {
             $(document).on('click', '#registerModalBtnId', function() {
+
                 var username = document.getElementById('usernameRegister').value;
                 var password = document.getElementById('passwordRegister').value;
                 var account = {};
                 account.username = username;
                 account.password = password;
                 account.id = username;
+
                 logindb.add(account);
 
                 $('#registerModal').modal('hide');
+
             });
         };
 
@@ -80,6 +82,21 @@
 
             });
 
+        };
+
+        FormHandler.prototype.addInputHandler = function(fn) {
+            console.log('Setting input handler for form');
+
+            this.$formElement.on('input', '[name="Username"]', function(event) {
+                var emailAddress = event.target.value;
+                var message = '';
+                if (fn(emailAddress)) {
+                    event.target.setCustomValidity('');
+                } else {
+                    message = emailAddress + ' is not an authorized email address!';
+                    event.target.setCustomValidity(message);
+                }
+            });
         };
 
     }

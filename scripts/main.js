@@ -1,6 +1,13 @@
 (function(window) {
     'use strict';
+
+    // GLOBAL VARIABLES ACROSS ALL JS FILES
+    window.username = 'global variable';
+    window.isLoggedIn = false;
+
     var FORM_SELECTOR = '[post-a-topic="form"]';
+    var REGISTER_MODAL_SELECTOR = '[modal-register-email="form"]';
+    var LOGIN_MODAL_SELECTOR = '[modal-login-email="form"]';
     var TOPICSLIST_SELECTOR = '[post-topic="topiclist"]';
     var SERVER_URL = 'http://localhost:3002/TopicSubmissions';
     var LOGIN_SERVER_URL = 'http://localhost:3002/LoginAccounts';
@@ -8,11 +15,17 @@
     var RemoteDB = App.RemoteDB;
     var LoginDB = App.LoginDB;
     var FormHandler = App.FormHandler;
+    var RegisterFormHandler = App.RegisterFormHandler;
+    var LoginFormHandler = App.LoginFormHandler;
     var TopicsList = App.TopicsList;
     var remoteDB = new RemoteDB(SERVER_URL);
     var loginDB = new LoginDB(LOGIN_SERVER_URL);
+    var Validation = App.Validation;
+
     var topicsList = new TopicsList(TOPICSLIST_SELECTOR, remoteDB);
     var formHandler = new FormHandler(FORM_SELECTOR, loginDB);
+    var registerModalHandler = new RegisterFormHandler(REGISTER_MODAL_SELECTOR, loginDB);
+    var loginModalHandler = new LoginFormHandler(LOGIN_MODAL_SELECTOR, loginDB);
 
     //Project 1 -LOAD UP THE PAGE WITH TOPICS
     var $ = window.jQuery;
@@ -36,9 +49,17 @@
             });
     });
 
-    //Login modal submit
-    formHandler.addLoginModalSubmitHandler();
-
     //Register modal submit
-    formHandler.addRegisterModalSubmitHandler();
+    registerModalHandler.addSubmitHandler(function(data) {
+        console.log(data);
+    });
+    registerModalHandler.addInputHandler(Validation.isCompanyEmail);
+
+    //Login modal submit
+    loginModalHandler.addSubmitHandler(function(data) {
+        console.log(data);
+    });
+    loginModalHandler.addInputHandler(Validation.isCompanyEmail);
+
+
 })(window);
