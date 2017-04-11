@@ -52,7 +52,6 @@
             });
         };
 
-
         FormHandler.prototype.addLoginModalSubmitHandler = function() {
             $(document).on('click', '#loginModalBtnId', function() {
                 var username = document.getElementById('usernameLogin').value;
@@ -83,22 +82,6 @@
             });
 
         };
-
-        FormHandler.prototype.addInputHandler = function(fn) {
-            console.log('Setting input handler for form');
-
-            this.$formElement.on('input', '[name="Username"]', function(event) {
-                var emailAddress = event.target.value;
-                var message = '';
-                if (fn(emailAddress)) {
-                    event.target.setCustomValidity('');
-                } else {
-                    message = emailAddress + ' is not an authorized email address!';
-                    event.target.setCustomValidity(message);
-                }
-            });
-        };
-
     }
 
     App.FormHandler = FormHandler;
