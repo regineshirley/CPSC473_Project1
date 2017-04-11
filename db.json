@@ -2,12 +2,21 @@
   "TopicSubmissions": [
     {
       "course": "cpsc473",
-      "topic": "test",
-      "id": "test",
-      "likes": "2",
-      "dislikes": "0",
-      "likesEmail": "luan@csu.fullerton.edu  luan2@csu.fullerton.edu",
-      "dislikesEmail": ""
+      "topic": "sup",
+      "id": "sup",
+      "likes": "0",
+      "dislikes": "2",
+      "likesEmail": "",
+      "dislikesEmail": "luancrazy@csu.fullerton.edu luan@csu.fullerton.edu"
+    },
+    {
+      "course": "cpsc473",
+      "topic": "testttt",
+      "id": "testttt",
+      "likes": "1",
+      "dislikes": "1",
+      "likesEmail": "luancrazy@csu.fullerton.edu",
+      "dislikesEmail": "luan@csu.fullerton.edu"
     }
   ],
   "LoginAccounts": [
@@ -45,6 +54,11 @@
       "username": "luan2@csu.fullerton.edu",
       "password": "test",
       "id": "luan2@csu.fullerton.edu"
+    },
+    {
+      "username": "luancrazy@csu.fullerton.edu",
+      "password": "test",
+      "id": "luancrazy@csu.fullerton.edu"
     }
   ]
 }
