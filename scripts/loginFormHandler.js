@@ -39,11 +39,25 @@
                     $('#registerBtnId').remove();
                     $('[for=loggedInDisplay]').html('Logged in as ' + username + '<br /> Refresh to log out');
                 } else {
-                    console.log('Login failed');
+                    $('#loginFailedModal').modal('show');
                 }
 
                 this.reset();
                 $('#loginModal').modal('hide');
+            });
+        };
+
+        LoginFormHandler.prototype.addInputHandler = function(fn) {
+            this.$formElement.on('input', '[name="Username"]', function(event) {
+                console.log('test');
+                var emailAddress = event.target.value;
+                var message = '';
+                if (fn(emailAddress)) {
+                    event.target.setCustomValidity('');
+                } else {
+                    message = emailAddress + ' is not an authorized email address!';
+                    event.target.setCustomValidity(message);
+                }
             });
         };
 
