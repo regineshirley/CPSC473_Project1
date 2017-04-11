@@ -18,10 +18,8 @@
     }
 
     TopicsList.prototype.addRow = function(TopicSubmission) {
-        // Create a new instance of a row, using the coffee order info
         var rowElement = new Row(TopicSubmission, this.db);
 
-        // Add the new row instance's $element property to the checklist
         this.$element.append(rowElement.$element);
     };
 
@@ -36,7 +34,6 @@
         });
 
         //Create labels
-        //var $descriptionLi = $('<li></li>');
         var $descriptionLabel = $('<label></label>');
         var $likeLabel = $('<label for="likeLabel"></label>');
         var $dislikeLabel = $('<label for="dislikeLabel"></label>');
@@ -48,11 +45,8 @@
         var description = TopicSubmission.course + ':&emsp;' + TopicSubmission.topic;
 
         //Create like/dislike buttons
-
         var $likeBtn = $('<button type="button" class="btn btn-success">Like</button>');
-
         var $space = $('<span> &emsp;&emsp;&emsp;</span>');
-
         var $dislikeBtn = $('<button type="button" class="btn btn-danger">Dislike</button>');
 
         //Create new id for the like/dislike buttons
@@ -92,13 +86,9 @@
 
                     //Display new likes count
                     $likeLabel.text(TopicSubmission.likes);
-
-                    console.log('not liked or disliked yet');
                 } else if (likeIndex != -1) //They already liked it, but tried clicking like again.
                 {
-                    //Display an alert, or validation message, instead of console.log
-
-                    console.log('You have already liked this');
+                    $('#alreadyLikedModal').modal('show');
                 } else if (dislikeIndex != -1) //They already disliked it, but tried clicking like as to change their mind.
                 {
                     //Append to likesEmail list.
@@ -125,14 +115,9 @@
 
                     //Display new dislikes count
                     $dislikeLabel.text(TopicSubmission.dislikes);
-
-                    console.log('disliked but changed to like');
-                } else {
-                    console.log('nothing happened');
                 }
             } else {
                 $('#signInModal').modal('show');
-                console.log('You are not logged in');
             }
         });
 
@@ -164,11 +149,10 @@
                     //Display new dislikes count
                     $dislikeLabel.text(TopicSubmission.dislikes);
 
-                    console.log('not liked or disliked yet');
                 } else if (dislikeIndex != -1) //They already disliked it, but tried clicking dislike again.
                 {
                     //Display an alert, or validation message, instead of console.log
-                    console.log('You have already disliked this');
+                    $('#alreadyDislikedModal').modal('show');
                 } else if (likeIndex != -1) //They already liked it, but tried clicking dislike as to change their mind.
                 {
                     //Append to dislikesEmail list.
@@ -195,21 +179,15 @@
 
                     //Display new dislikes count
                     $dislikeLabel.text(TopicSubmission.dislikes);
-
-                    console.log('liked but changed to dislike');
-                } else {
-                    console.log('nothing happened');
                 }
             } else {
                 $('#signInModal').modal('show');
-                console.log('You are not logged in');
             }
         });
 
         $descriptionLabel.append(description);
 
         $div.append($descriptionLabel);
-        //$div.append($descriptionLi);
 
         $div.append($likeBtn);
         $div.append($likeLabel);
