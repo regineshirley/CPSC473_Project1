@@ -1,7 +1,7 @@
 ## Overview
 
-#### Web application that allows students to vote on how likely it is that a given topic will show up on the next test. 
-#### This application is written in Javascript and uses JQuery and AJAX
+<p> Web application that allows students to vote on how likely it is that a given topic will show up on the next test. 
+This application is written in Javascript and uses JQuery and AJAX </p>
 
 ### INFORMATION FOR USERS:
 
@@ -21,20 +21,20 @@
 ### Prerequisites
 
 * Node.js
-    #### For latest version download from https://nodejs.org/en/download/
+    <p> For latest version download from https://nodejs.org/en/download/ </p>
     
-* Atom text editor
-    #### Install at > https://atom.io/
+* Atom text editor (Any Editor)
+    <p> Install at > https://atom.io/ </p>
     
 * Atom Plug-ins (Optional)
-    #### Open Atom and navigate to its Settings screen. On a Mac, this is done by choosing Atom → Preferences... On Windows, you can access it via File → Settings or using the keyboard shortcut Ctrl-. On the lefthand side of the Settings   screen, click + Install
-    #### Install emmet,atom-beautify, autocomplete-paths, api-docs, linter, linter-csslint, linter-htmlhint and linter-eslint
+   <p> Open Atom and navigate to its Settings screen. On a Mac, this is done by choosing Atom → Preferences... On Windows, you can access it via File → Settings or using the keyboard shortcut Ctrl-. On the lefthand side of the Settings   screen, click + Install. Install emmet,atom-beautify, autocomplete-paths, api-docs, linter, linter-csslint, linter-htmlhint and linter-eslint. </p>
     
 * Google Chrome Browser
-    #### For latest version > www.google.com/chrome/browser/desktop
+    <p> For latest version > www.google.com/chrome/browser/desktop </p>
 
 * Install `npm` Packages:
-#### Open your terminal and enter the following command
+<p> Open your terminal and enter the following command </p>
+
     > npm install -g json-server
     > npm install -g browser-sync
 
