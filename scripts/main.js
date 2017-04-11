@@ -12,6 +12,7 @@
     var TOPICSLIST_SELECTOR = '[post-topic="topiclist"]';
     var SERVER_URL = 'http://localhost:3002/TopicSubmissions';
     var LOGIN_SERVER_URL = 'http://localhost:3002/LoginAccounts';
+
     var App = window.App;
     var RemoteDB = App.RemoteDB;
     var LoginDB = App.LoginDB;
@@ -19,10 +20,10 @@
     var RegisterFormHandler = App.RegisterFormHandler;
     var LoginFormHandler = App.LoginFormHandler;
     var TopicsList = App.TopicsList;
-    var remoteDB = new RemoteDB(SERVER_URL);
-    var loginDB = new LoginDB(LOGIN_SERVER_URL);
     var Validation = App.Validation;
 
+    var remoteDB = new RemoteDB(SERVER_URL);
+    var loginDB = new LoginDB(LOGIN_SERVER_URL);
     var topicsList = new TopicsList(TOPICSLIST_SELECTOR, remoteDB);
     var formHandler = new FormHandler(FORM_SELECTOR, loginDB);
     var registerModalHandler = new RegisterFormHandler(REGISTER_MODAL_SELECTOR, loginDB);
@@ -60,7 +61,7 @@
     loginModalHandler.addSubmitHandler(function(data) {
         console.log(data);
     });
-    //loginModalHandler.addInputHandler(Validation.isCompanyEmail);
+    loginModalHandler.addInputHandler(Validation.isCompanyEmail);
 
 
 })(window);
