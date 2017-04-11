@@ -30,6 +30,7 @@
 
                 $(accountList).each(function(index, value) {
                     if (username === value.username) {
+                        window.isLoggedIn = username;
                         window.isRegistered = true;
                     }
                 });
@@ -39,7 +40,7 @@
                     window.isRegistered = false;
                 } else {
                     logindb.add(account);
-
+                    window.username = username;
                     window.isLoggedIn = true;
                     $('#loginBtnId').remove();
                     $('#registerBtnId').remove();

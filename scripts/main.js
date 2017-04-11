@@ -2,7 +2,7 @@
     'use strict';
 
     // GLOBAL VARIABLES ACROSS ALL JS FILES
-    window.username = 'global variable';
+    window.username = '';
     window.isLoggedIn = false;
     window.isRegistered = false;
 
