@@ -12,6 +12,7 @@
         this.data = {}; //create empty object
     }
 
+    //Update the server with the new object
     RemoteDB.prototype.update = function(topic) {
         $.ajax({
             url: this.serverUrl + '/' + topic.id,
@@ -25,14 +26,14 @@
         });
     };
 
+    //Add an object to the server
     RemoteDB.prototype.add = function(topic, course) {
         return $.post(this.serverUrl, topic, function(serverResponse) {
             console.log(serverResponse);
         });
-
-        //this.data[topic] = course; //{key = topic & val = course} topic is unique
     };
 
+    //Get all objects from the server
     RemoteDB.prototype.getAll = function(cb) {
         return $.get(this.serverUrl, function(serverResponse) {
             if (cb) {
@@ -40,9 +41,9 @@
                 cb(serverResponse);
             }
         });
-        //return this.data;
     };
 
+    //Get one object from the server
     RemoteDB.prototype.get = function(key) {
         var obj;
         $.ajax({
@@ -60,13 +61,6 @@
         });
 
         return obj;
-    };
-
-    //Don't need ATM
-    RemoteDB.prototype.remove = function(key) {
-        return $.ajax(this.serverUrl + '/' + key, {
-            type: 'DELETE'
-        });
     };
 
     App.RemoteDB = RemoteDB;
