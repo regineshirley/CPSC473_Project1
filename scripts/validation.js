@@ -6,7 +6,6 @@
         isCompanyEmail: function(email) {
             return /.+@csu.fullerton\.edu$/.test(email);
         }
-
     };
 
     App.Validation = Validation;
