@@ -73,7 +73,7 @@
             var likeIndex = likesList.indexOf(window.username);
             var dislikeIndex = dislikesList.indexOf(window.username);
 
-            if (window.isLoggedIn) {
+            if (window.isLoggedIn || window.isRegistered) {
 
                 //If user has not liked or disliked this, and they tried to click like
                 if (likeIndex == -1 && dislikeIndex == -1) {
@@ -131,7 +131,7 @@
                     console.log('nothing happened');
                 }
             } else {
-                //change to alert or validation message.
+                $('#signInModal').modal('show');
                 console.log('You are not logged in');
             }
         });
@@ -145,7 +145,7 @@
             var dislikeIndex = dislikesList.indexOf(window.username);
 
 
-            if (window.isLoggedIn) {
+            if (window.isLoggedIn || window.isRegistered) {
                 //If user has not liked or disliked this, and they tried to click dislike
                 if (likeIndex == -1 && dislikeIndex == -1) {
                     //Append to dislikesEmail list.
@@ -201,7 +201,7 @@
                     console.log('nothing happened');
                 }
             } else {
-                //change to alert or validation message.
+                $('#signInModal').modal('show');
                 console.log('You are not logged in');
             }
         });

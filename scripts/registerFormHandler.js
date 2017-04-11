@@ -26,10 +26,28 @@
                 account.password = password;
                 account.id = username;
 
-                logindb.add(account);
+                var accountList = logindb.getAll();
 
-                this.reset();
-                $('#registerModal').modal('hide');
+                $(accountList).each(function(index, value) {
+                    if (username === value.username) {
+                        window.isRegistered = true;
+                    }
+                });
+
+                if (window.isRegistered) {
+                    $('#alreadyRegisterModal').modal('show');
+                    window.isRegistered = false;
+                } else {
+                    logindb.add(account);
+
+                    window.isLoggedIn = true;
+                    $('#loginBtnId').remove();
+                    $('#registerBtnId').remove();
+                    $('[for=loggedInDisplay]').html('Logged in as ' + username + '<br /> Refresh to log out');
+
+                    this.reset();
+                    $('#registerModal').modal('hide');
+                }
             });
         };
 

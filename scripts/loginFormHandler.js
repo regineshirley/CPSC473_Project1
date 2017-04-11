@@ -29,9 +29,6 @@
                     if (username == value.username && password == value.password) {
                         window.username = username;
                         loggedIn = true;
-                    } else {
-                        var message = 'wrong password';
-                        event.target.setCustomValidity(message);
                     }
                 }.bind(this));
 

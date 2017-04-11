@@ -2,21 +2,12 @@
   "TopicSubmissions": [
     {
       "course": "cpsc473",
-      "topic": "test",
-      "id": "test",
-      "likes": "0",
-      "dislikes": "2",
-      "likesEmail": "",
-      "dislikesEmail": "hello test"
-    },
-    {
-      "course": "cpsc473",
       "topic": "again",
       "id": "again",
-      "likes": "0",
-      "dislikes": "1",
-      "likesEmail": "",
-      "dislikesEmail": "test"
+      "likes": "3",
+      "dislikes": "8",
+      "likesEmail": "global variable global variable d@csu.fullerton.edu",
+      "dislikesEmail": "test global variable global variable  global variable global variable global variable global variable global variable"
     },
     {
       "course": "cpsc473",
@@ -26,58 +17,100 @@
       "dislikes": "0",
       "likesEmail": "test",
       "dislikesEmail": ""
+    },
+    {
+      "course": "cpsc473",
+      "topic": "123",
+      "id": "123",
+      "likes": "0",
+      "dislikes": "0",
+      "likesEmail": "",
+      "dislikesEmail": ""
+    },
+    {
+      "course": "cpsc473",
+      "topic": "bootstrao",
+      "id": "bootstrao",
+      "likes": "0",
+      "dislikes": "0",
+      "likesEmail": "",
+      "dislikesEmail": ""
+    },
+    {
+      "course": "cpsc473",
+      "topic": "sdkfhs",
+      "id": "sdkfhs",
+      "likes": "0",
+      "dislikes": "0",
+      "likesEmail": "",
+      "dislikesEmail": ""
+    },
+    {
+      "course": "cpsc473",
+      "topic": "hi",
+      "id": "hi",
+      "likes": "0",
+      "dislikes": "0",
+      "likesEmail": "",
+      "dislikesEmail": ""
+    },
+    {
+      "course": "cpsc473",
+      "topic": "hey",
+      "id": "hey",
+      "likes": "0",
+      "dislikes": "0",
+      "likesEmail": "",
+      "dislikesEmail": ""
+    },
+    {
+      "course": "cpsc473",
+      "topic": "a",
+      "id": "a",
+      "likes": "0",
+      "dislikes": "0",
+      "likesEmail": "",
+      "dislikesEmail": ""
+    },
+    {
+      "course": "cpsc473",
+      "topic": "test",
+      "id": "test",
+      "likes": "0",
+      "dislikes": "0",
+      "likesEmail": "",
+      "dislikesEmail": ""
+    },
+    {
+      "course": "cpsc473",
+      "topic": "hey1",
+      "id": "hey1",
+      "likes": "0",
+      "dislikes": "0",
+      "likesEmail": "",
+      "dislikesEmail": ""
     }
   ],
   "LoginAccounts": [
     {
-      "username": "hello",
-      "password": "world",
-      "id": "hello"
+      "username": "d@csu.fullerton.edu",
+      "password": "d",
+      "id": "d@csu.fullerton.edu"
     },
     {
-      "username": "sdfs@csu.fullerton.edu",
-      "password": "uyyu",
-      "id": "sdfs@csu.fullerton.edu"
+      "username": "1@csu.fullerton.edu",
+      "password": "1",
+      "id": "1@csu.fullerton.edu"
     },
     {
-      "username": "hvh@csu.fullerton.edu",
-      "password": "123",
-      "id": "hvh@csu.fullerton.edu"
+      "username": "d4@csu.fullerton.edu",
+      "password": "4",
+      "id": "d4@csu.fullerton.edu"
     },
     {
-      "username": "regine@csu.fu",
-      "password": "12",
-      "id": "regine@csu.fu"
-    },
-    {
-      "username": "regin",
-      "password": "12",
-      "id": "regin"
-    },
-    {
-      "username": "lol@csu.fullerton.edu",
-      "password": "test",
-      "id": "lol@csu.fullerton.edu"
-    },
-    {
-      "username": "lol@bs.com",
-      "password": "test",
-      "id": "lol@bs.com"
-    },
-    {
-      "username": "lol123@csu.fullerton.edu",
-      "password": "test",
-      "id": "lol123@csu.fullerton.edu"
-    },
-    {
-      "username": "re@csu.fullerton.edu",
-      "password": "123",
-      "id": "re@csu.fullerton.edu"
-    },
-    {
-      "username": "basjnsjsdf@csu.fullerton.edu",
-      "password": "12",
-      "id": "basjnsjsdf@csu.fullerton.edu"
+      "username": "hi@csu.fullerton.edu",
+      "password": "hi",
+      "id": "hi@csu.fullerton.edu"
     }
   ]
 }

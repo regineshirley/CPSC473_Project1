@@ -4,6 +4,7 @@
     // GLOBAL VARIABLES ACROSS ALL JS FILES
     window.username = 'global variable';
     window.isLoggedIn = false;
+    window.isRegistered = false;
 
     var FORM_SELECTOR = '[post-a-topic="form"]';
     var REGISTER_MODAL_SELECTOR = '[modal-register-email="form"]';
@@ -59,7 +60,7 @@
     loginModalHandler.addSubmitHandler(function(data) {
         console.log(data);
     });
-    loginModalHandler.addInputHandler(Validation.isCompanyEmail);
+    //loginModalHandler.addInputHandler(Validation.isCompanyEmail);
 
 
 })(window);
