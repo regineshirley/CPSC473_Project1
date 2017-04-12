@@ -20,14 +20,14 @@
             data: JSON.stringify(topic),
             dataType: 'json',
             contentType: 'application/json',
-            success: function(data) {
+            success: function() {
                 console.log('Updated server');
             }
         });
     };
 
     //Add an object to the server
-    RemoteDB.prototype.add = function(topic, course) {
+    RemoteDB.prototype.add = function(topic) {
         return $.post(this.serverUrl, topic, function(serverResponse) {
             console.log(serverResponse);
         });

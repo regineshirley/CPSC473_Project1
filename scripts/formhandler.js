@@ -30,6 +30,7 @@
                         this.elements[0].focus();
                     }.bind(this));
                 } else {
+                    $('#submitModal').modal('show');
                     console.log('You have to log in to post');
                 }
             });

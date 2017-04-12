@@ -2,63 +2,42 @@
   "TopicSubmissions": [
     {
       "course": "cpsc473",
-      "topic": "sup",
-      "id": "sup",
-      "likes": "0",
-      "dislikes": "2",
-      "likesEmail": "",
-      "dislikesEmail": "luancrazy@csu.fullerton.edu luan@csu.fullerton.edu"
+      "topic": "ajax",
+      "id": "ajax",
+      "likes": "2",
+      "dislikes": "1",
+      "likesEmail": "diana@csu.fullerton.edu test@csu.fullerton.edu",
+      "dislikesEmail": "diana@csu.fullerton.edu"
     },
     {
       "course": "cpsc473",
-      "topic": "testttt",
-      "id": "testttt",
+      "topic": "merge sort",
+      "id": "merge sort",
       "likes": "1",
+      "dislikes": "2",
+      "likesEmail": "test@csu.fullerton.edu ",
+      "dislikesEmail": "diana@csu.fullerton.edu"
+    },
+    {
+      "course": "cpsc473",
+      "topic": "bootstrap",
+      "id": "bootstrap",
+      "likes": "2",
       "dislikes": "1",
-      "likesEmail": "luancrazy@csu.fullerton.edu",
-      "dislikesEmail": "luan@csu.fullerton.edu"
+      "likesEmail": "diana@csu.fullerton.edu",
+      "dislikesEmail": "test@csu.fullerton.edu   "
     }
   ],
   "LoginAccounts": [
     {
-      "username": "d@csu.fullerton.edu",
-      "password": "d",
-      "id": "d@csu.fullerton.edu"
+      "username": "diana@csu.fullerton.edu",
+      "password": "diana",
+      "id": "diana@csu.fullerton.edu"
     },
     {
-      "username": "1@csu.fullerton.edu",
-      "password": "1",
-      "id": "1@csu.fullerton.edu"
-    },
-    {
-      "username": "d4@csu.fullerton.edu",
-      "password": "4",
-      "id": "d4@csu.fullerton.edu"
-    },
-    {
-      "username": "hi@csu.fullerton.edu",
-      "password": "hi",
-      "id": "hi@csu.fullerton.edu"
-    },
-    {
-      "username": "luan@csu.fullerton.edu",
+      "username": "test@csu.fullerton.edu",
       "password": "test",
-      "id": "luan@csu.fullerton.edu"
-    },
-    {
-      "username": "luan1@csu.fullerton.edu",
-      "password": "test",
-      "id": "luan1@csu.fullerton.edu"
-    },
-    {
-      "username": "luan2@csu.fullerton.edu",
-      "password": "test",
-      "id": "luan2@csu.fullerton.edu"
-    },
-    {
-      "username": "luancrazy@csu.fullerton.edu",
-      "password": "test",
-      "id": "luancrazy@csu.fullerton.edu"
+      "id": "test@csu.fullerton.edu"
     }
   ]
 }
