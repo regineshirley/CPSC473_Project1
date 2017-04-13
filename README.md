@@ -73,6 +73,7 @@ Students can vote on how likely it is that a given topic will show up on the nex
 
 ##### Coding details:
 	> included in the TitanStudyBuddy_Documentation google doc link below
+	
 	https://docs.google.com/document/d/1ENDgfB44NvwemCBMJdApgV-jvHXadrPbxBIKBmXKKQE/edit?usp=sharing
 
 ##### JSON database structure:
