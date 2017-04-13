@@ -23,10 +23,6 @@
         this.$element.append(rowElement.$element);
     };
 
-    TopicsList.prototype.removeRow = function(email) {
-        this.$element.find('[value="' + email + '"]').closest('[post-topic="topiclist"]').remove();
-    };
-
     function Row(TopicSubmission, db) {
         var $div = $('<div></div>', {
             'post-topic': 'topiclist',
