@@ -79,6 +79,42 @@ The db.json consist of two arrays called "Topics_Submitted" and "LoginAccounts".
 2.	“username”: it has the user's email id.
 3.	“password”: it contains the user password.
 
+## User Manual
+
+ 
+- Launch the web page by running browser sync. The webpage will look like the screen shot below.
+![first_look](https://cloud.githubusercontent.com/assets/14969562/24989769/d8541e16-1fc3-11e7-8787-cf337719b232.PNG)
+
+- click on the register button to register with csu.fullerton.edu.
+![registration](https://cloud.githubusercontent.com/assets/14969562/24989796/042aca08-1fc4-11e7-95ee-c60ae115f58d.PNG)
+
+- Enter the username, password and click Register button.
+
+- Click on login button and enter the details as shown below to login.
+![login](https://cloud.githubusercontent.com/assets/14969562/24989893/c3b8b952-1fc4-11e7-8db6-2f63c262277d.PNG)
+
+- After login it looks as shown below.
+![after_login](https://cloud.githubusercontent.com/assets/14969562/24989909/df02fc4a-1fc4-11e7-93e6-6c8b96066644.PNG)
+
+- Now, you can post a topic by selecting the course from the dropdown.
+![select_course](https://cloud.githubusercontent.com/assets/14969562/24989927/ff63359a-1fc4-11e7-866a-7a7a89e3eeba.png)
+
+- Enter the topic and click on submit button
+![topic_entered](https://cloud.githubusercontent.com/assets/14969562/24989949/2c363c02-1fc5-11e7-9131-2baa40908f8b.PNG)
+
+- Now, you will see the topic you entered displayed at the bottom of the topics for all course.
+![added topic](https://cloud.githubusercontent.com/assets/14969562/24989967/53a88326-1fc5-11e7-9587-4d283f859b40.PNG)
+
+- Click on like or dislike button and notice the counter value change.
+![final](https://cloud.githubusercontent.com/assets/14969562/24990134/71b58070-1fc6-11e7-87a9-92016981f5e6.PNG)
+
+- If you are not logged in, the following error message will be displayed.
+![errorlogin](https://cloud.githubusercontent.com/assets/14969562/24990010/9ad07510-1fc5-11e7-86b9-acb6e8b8dde1.PNG)
+
+- If you have already voted, then the following error message will be displayed.
+![already voted](https://cloud.githubusercontent.com/assets/14969562/24990057/f0da631c-1fc5-11e7-8ff6-857c82db825d.PNG)
+
+
 ## Group Members:
 * Regine Lee
 * Arjen Mercado
