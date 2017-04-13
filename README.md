@@ -3,7 +3,16 @@
 <p> Web application that allows students to vote on how likely it is that a given topic will show up on the next test.
 This application is written in Javascript and uses JQuery and AJAX </p>
 
-### INFORMATION FOR USERS:
+## Group Members:
+* Regine Lee
+* Arjen Mercado
+* Nikita Sadinidhi Vijayan
+* Diana Galvan
+* Luan Khong
+* Eric Lara
+
+
+## INFORMATION FOR USERS:
 
 1. Creating an account:
     * Click the 'Register' button and enter a username and password.
@@ -62,6 +71,10 @@ Students can vote on how likely it is that a given topic will show up on the nex
 * Users can register with their school email_id and create a own password
 * Once students registered, they can login to like or dislike a particular topic.
 
+##### Coding details:
+	> included in the TitanStudyBuddy_Documentation google doc link below
+	https://docs.google.com/document/d/1ENDgfB44NvwemCBMJdApgV-jvHXadrPbxBIKBmXKKQE/edit?usp=sharing
+
 ##### JSON database structure:
 The db.json consist of two arrays called "Topics_Submitted" and "LoginAccounts".
 
@@ -115,11 +128,4 @@ The db.json consist of two arrays called "Topics_Submitted" and "LoginAccounts".
 ![already voted](https://cloud.githubusercontent.com/assets/14969562/24990057/f0da631c-1fc5-11e7-8ff6-857c82db825d.PNG)
 
 
-## Group Members:
-* Regine Lee
-* Arjen Mercado
-* Nikita Sadinidhi Vijayan
-* Diana Galvan
-* Luan Khong
-* Eric Lara
 
