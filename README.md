@@ -72,9 +72,9 @@ Students can vote on how likely it is that a given topic will show up on the nex
 * Once students registered, they can login to like or dislike a particular topic.
 
 ##### Coding details:
-	> included in the TitanStudyBuddy_Documentation google doc link below
-	
-	https://docs.google.com/document/d/1ENDgfB44NvwemCBMJdApgV-jvHXadrPbxBIKBmXKKQE/edit?usp=sharing
+
+Included in the TitanStudyBuddy_Documentation google doc link below
+	<p> (https://docs.google.com/document/d/1ENDgfB44NvwemCBMJdApgV-jvHXadrPbxBIKBmXKKQE/edit?usp=sharing) <p>
 
 ##### JSON database structure:
 The db.json consist of two arrays called "Topics_Submitted" and "LoginAccounts".
