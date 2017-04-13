@@ -39,25 +39,51 @@ This application is written in Javascript and uses JQuery and AJAX </p>
     > npm install -g browser-sync
 
 ### Running the application:
-#### Navigate to Project folder in the terminal-
+**Navigate to Project folder in the terminal-**
 
 	> cd CPSC473_Project1
-#### Type in the following command-
+**Type in the following command- to start the json server**
 
 	> json-server --port=3002 --watch db.json
-#### Open another terminal and use following commands -
+**Open another terminal and use following commands**
 
 	> cd CPSC473_Project1
-	> browser-sync start --server
+	> browser-sync start --server --files "*.html, stylesheets/*.css, scripts/*.js"
 
-#### Web server will be up and running on your local machine at -
+**Web server will be up and running on your local machine at -**
 
 	> http://localhost:3000
 
+## Technical Details
+#### Purpose: 
+Students can vote on how likely it is that a given topic will show up on the next test.
+
+##### Functionality:
+* Users can register with their school email_id and create a own password
+* Once students registered, they can login to like or dislike a particular topic.
+
+##### JSON database structure:
+The db.json consist of two arrays called "Topics_Submitted" and "LoginAccounts".
+
+**TopicSubmissions**
+1.	“id”: this is used as a unique identifier for topics.
+2.	“course”: Course name.
+3.	“topic”: It is the topic name from the course.
+4.	“likes”:  counter for number of likes
+5.	“dislikes”: counter for number of dislikes
+6.	“likesEmail”: this is an array which consist email_ids of students who liked a topic.
+7.	“dislikesEmail”: this is an array which consist email_ids of students who disliked a topic.
+
+**LoginAccounts**
+1.	“id”: this is used as a unique identifier for user id.
+2.	“username”: it has the user's email id.
+3.	“password”: it contains the user password.
+
 ## Group Members:
--Regine Lee
--Arjen Mercado
--Diana Galvan
--Luan Khong
--Eric Lara
--Nikita Sadinidhi Vijayan
+* Regine Lee
+* Arjen Mercado
+* Nikita Sadinidhi Vijayan
+* Diana Galvan
+* Luan Khong
+* Eric Lara
+
